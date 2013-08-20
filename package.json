@@ -1,0 +1,19 @@
+{
+  "author": {
+    "name": "KradekMFC",
+    "email": "kradekmfc@gmail.com"
+  },
+  "name": "MFCSocket",
+  "description": "WebSocket client for communicating with MFC chat servers",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KradekMFC/MFCSocket.git"
+  },
+  "dependencies": {
+    "underscore": ">=1.5.1",
+    "underscore.string": ">=2.3.3",
+    "ws": ">=0.4.28"
+  },
+  "readmeFilename": "README.md"
+}
