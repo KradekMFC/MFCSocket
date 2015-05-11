@@ -6,8 +6,9 @@ module.exports.JoinChannelMessage = require('./lib/MFCMessage').JoinChannelMessa
 module.exports.LeaveChannelMessage = require('./lib/MFCMessage').LeaveChannelMessage;
 
 
-module.exports.MFCVideoState = require('./lib/MFCEnum').MFCVideoState;
-module.exports.MFCChatOpt = require('./lib/MFCEnum').MFCChatOpt;
-module.exports.MFCMessageType = require('./lib/MFCEnum').MFCMessageType;
-module.exports.MFCResponseType = require('./lib/MFCEnum').MFCResponseType;
-module.exports.MFCAccessLevel = require('./lib/MFCEnum').MFCAccessLevel;
+module.exports.MFCEnums = require('./lib/MFCEnums'); //this object includes all enum types classified as unknown
+module.exports.MFCVideoState = require('./lib/MFCEnums').MFCVideoState;
+module.exports.MFCChatOpt = require('./lib/MFCEnums').MFCChatOpt;
+module.exports.MFCMessageType = require('./lib/MFCEnums').MFCMessageType;
+module.exports.MFCResponseType = require('./lib/MFCEnums').MFCResponseType;
+module.exports.MFCAccessLevel = require('./lib/MFCEnums').MFCAccessLevel;
