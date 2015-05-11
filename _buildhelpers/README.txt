@@ -1,0 +1,1 @@
+The build.sh process grabs variables directly from MyFreeCams to update the MFCEnums.js file. They usually don't change it for years, and only do it to add new enums, so the pre-built MFCEnums.js file should be fine and you will probably never have to run this tool manually.
