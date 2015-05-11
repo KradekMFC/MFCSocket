@@ -105,7 +105,19 @@ function formatEnums( fcs ){
 			// output all of the minor types for the current major type
 			for( var minortype in fcs.enums[majortype] ){
 				if( fcs.enums[majortype].hasOwnProperty( minortype ) ){
-					output += '\t\t' + minortype + ' : ' + fcs.enums[majortype][minortype] + ',\n';
+					// explain some of the commonly used but illogically named types
+					var minortypehelp = '';
+					switch( minortype ){
+						case 'FCTYPE_NULL':
+							minortypehelp = 'Used for chat connection keepalive (ping)';
+							break;
+						case 'FCVIDEO_TX_IDLE':
+							minortypehelp = 'In public room';
+							break;
+					}
+					
+					// output the current minor type
+					output += '\t\t' + minortype + ' : ' + fcs.enums[majortype][minortype] + ',' + ( minortypehelp !== '' ? ' // ' + minortypehelp : '' ) + '\n';
 				}
 			}
 			
@@ -121,7 +133,7 @@ function formatEnums( fcs ){
 
 // grab the FCS object directly from "FCS.js"; it contains all of their numerical message type codes.
 // we could also grab the compiled "mfccore.js" file instead, but that one lacks the version comment.
-http.get({ host:'myfreecams.com', port:80, path:'/mfc2/lib/FCS.js' }, function( res ) {
+http.get({ host:'myfreecams.com', port:80, path:'/mfc2/lib/FCS.js' }, function( res ){
 	var body = '';
 	res.on( 'data', function( chunk ){
 		body += chunk;
@@ -131,7 +143,7 @@ http.get({ host:'myfreecams.com', port:80, path:'/mfc2/lib/FCS.js' }, function( 
 		var enumJS = formatEnums( parseFCS( body ) );
 		
 		// write the file to disk
-		fs.writeFile( '../lib/MFCEnums.js', enumJS, function( err ) {
+		fs.writeFile( '../lib/MFCEnums.js', enumJS, function( err ){
 			if( err ) throw err;
 			console.log( 'Build: MFCEnums.js: Written to disk!' );
 		});
