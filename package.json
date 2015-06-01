@@ -11,8 +11,9 @@
     "url": "https://github.com/KradekMFC/MFCSocket.git"
   },
   "dependencies": {
-    "request": "^2.53.0",
-    "underscore": "^1.8.2",
-    "ws": "0.7.1"
+    "nconf": "^0.7.1",
+    "request": "^2.57.0",
+    "underscore": "^1.8.3",
+    "ws": "^0.7.2"
   }
 }
