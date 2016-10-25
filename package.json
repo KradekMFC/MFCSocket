@@ -5,7 +5,7 @@
   },
   "name": "MFCSocket",
   "description": "WebSocket client for communicating with MFC chat servers",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "repository": {
     "type": "git",
     "url": "https://github.com/KradekMFC/MFCSocket.git"
@@ -14,6 +14,6 @@
     "nconf": "^0.7.1",
     "request": "^2.57.0",
     "underscore": "^1.8.3",
-    "ws": "^0.7.2"
+    "ws": "^1.1.0"
   }
 }
